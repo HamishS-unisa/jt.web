@@ -1,1 +1,158 @@
-Products
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Turners Treats Products</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet"
+        type="text/css">
+    <style>
+        :root {
+            --primary-color: cornsilk;
+            --secondary-color: rgb(28, 114, 88);
+            --bg-color: rgb(100, 114, 77);
+            --font-color: white;
+            --heading-color: rgb(160, 166, 135);
+
+
+
+        }
+
+        [data-theme="dark"] {
+            --primary-color: white;
+            --secondary-color: grey;
+            --bg-color: black;
+            --font-color: rgb(178, 221, 51);
+            --heading-color: green;
+        }
+
+        header,
+        h1,
+        h2,
+        h3 {
+            color: var(--primary-color);
+            background-color: var(--heading-color);
+
+        }
+    </style>
+    <script>
+        /*bird picture selection function takes value from button press and uses 
+        if statementto determine which picture must be displayed aswell as text.*/
+        function pageselect(value) {
+            var i = value;
+            if (i == 0) {
+                window.location = 'home.html';
+            } if (i == 1) {
+                window.location = 'about.html';
+            } if (i == 2) {
+                window.location = 'pro.html'
+            } if (i == 3) {
+                window.location = 'order.html';
+            } if (i == 4) {
+                window.location = 'blog.html';
+            }
+            return 0;
+        }
+        function proselect(value) {
+            /*initaliseing variables for sorces of info and images*/
+            var image = document.getElementById('Product')
+            var text = document.getElementById('Producttext')
+            var i = value;
+            if (i == 0) {
+                image.src = "cake.jpg";
+                text.innerHTML = "birthday and wedding cakes";
+            } if (i == 1) {
+                image.src = "cupcake.jpg";
+                text.innerHTML = "custom made cupcakes";
+            } if (i == 2) {
+                image.src = "tart.jpg";
+                text.innerHTML = "all kinds of tarts";
+            } if (i == 3) {
+                image.src = "cookie.jpg";
+                text.innerHTML = "only choc chip cookies i cannot and will not make any other type of cookie";
+            } if (i == 4) {
+                image.src = "bread.jpg";
+                text.innerHTML = "sour dough";
+            }
+            return 0;
+        }
+        /* initalise nightmode check for setup for bool */
+        var nightcheck = true;
+
+        function nightmode() {
+            /*initalise e to be changed by if statement*/
+            var e = document.querySelector(":root");
+            if (nightcheck == true) {
+                e.setAttribute("data-theme", "dark");
+                nightcheck = false;
+            } else {
+                e.setAttribute("data-theme", ":root")
+                nightcheck = true;
+            }
+        }
+    </script>
+
+</head>
+
+<body style="background-color: var(--bg-color)">
+    <header>
+        <h1 style="text-align: center;font-size: 42px;">
+            Turner's Treats
+        </h1>
+    </header>
+    <nav>
+
+        <ul style="list-style: none;display:flex;justify-content: space-between;padding-right: 10%;padding-left: 10%;">
+            <li><button onclick="pageselect(0)" id="0"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">Home</button></li>
+            <li><button onclick="pageselect(1)" id="1"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">About
+                </button></li>
+            <li><button onclick="pageselect(2)" id="2"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">Products/Services
+                </button></li>
+            <li><button onclick="pageselect(3)" id="3"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">Order/Contact
+                </button></li>
+            <li><button onclick="pageselect(4)" id="4"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">Blog and News</button>
+            </li>
+        </ul>
+
+
+    </nav>
+
+
+    <div style="text-align: center;"><img id="Product" src="cake.jpg" alt="image not found"
+            style="width: 500px;height: auto; max-height: 800px;"></div>
+    <nav>
+
+        <ul style="list-style: none;display:flex;justify-content: space-between;padding-right: 10%;padding-left: 10%;">
+            <li><button onclick="proselect(0)"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">cakes</button></li>
+            <li><button onclick="proselect(1)"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">cupcakes
+                </button></li>
+            <li><button onclick="proselect(2)"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">tarts
+                </button></li>
+            <li><button onclick="proselect(3)"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">cookies
+                </button></li>
+            <li><button onclick="proselect(4)"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">breads</button></li>
+        </ul>
+
+
+    </nav>
+    <p id="Producttext" style="color: var(--font-color);text-align: center;">birthday and wedding cakes</p>
+</body>
+
+<button onclick="nightmode()"
+    style="background-color: var(--secondary-color); color: var(--font-color);">nightmode</button>
+
+<footer style="color: var(--font-color);">find out more at turner's.treats instagram page or contact me at a@a.com
+</footer>
+
+</html>
