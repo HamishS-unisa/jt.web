@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
 
-    <title>hamish bird page</title>
+    <title>Turners Treats Home</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet"
         type="text/css">
     <style>
         :root {
             --primary-color: cornsilk;
-            --secondary-color: rgb(0, 139, 97);
-            --bg-color: lightblue;
+            --secondary-color: rgb(28, 114, 88);
+            --bg-color: rgb(100, 114, 77);
             --font-color: white;
-            --heading-color: darkblue;
+            --heading-color: rgb(160, 166, 135);
 
 
 
@@ -39,26 +39,21 @@
     <script>
         /*bird picture selection function takes value from button press and uses 
         if statementto determine which picture must be displayed aswell as text.*/
-        function birdselect(value) {
+        function pageselect(value) {
             /*initaliseing variables for sorces of info and images*/
             var image = document.getElementById('birdmain')
             var text = document.getElementById('birdtext')
             var i = value;
             if (i == 0) {
-                image.src = "http://www.outgrabe.net/bird00.jpg";
-                text.innerHTML = "Pardalote by fir0002 (CC-by-NC)";
+                window.location = 'home.html';
             } if (i == 1) {
-                image.src = "http://www.outgrabe.net/bird01.jpg";
-                text.innerHTML = "Purple swamp hen by Toby Hudson (CC-by-SA)";
+                window.location = 'about.html';
             } if (i == 2) {
-                image.src = "http://www.outgrabe.net/bird02.jpg";
-                text.innerHTML = "White-headed Stilt by JJ Harrison (CC-by-SA)";
+                window.location = 'pro.html'
             } if (i == 3) {
-                image.src = "http://www.outgrabe.net/bird03.jpg";
-                text.innerHTML = "Inland Thornbill by Peter Jacobs (CC-by-SA)";
+                window.location = 'order.html';
             } if (i == 4) {
-                image.src = "http://www.outgrabe.net/bird04.jpg";
-                text.innerHTML = "Rose Robin by JJ Harrison (CC-by-SA)";
+                window.location = 'blog.html';
             }
             return 0;
         }
@@ -83,29 +78,31 @@
 <body style="background-color: var(--bg-color)">
     <header>
         <h1 style="text-align: center;font-size: 42px;">
-            Hamish's bird scrapbook
+            Turner's Treats
         </h1>
     </header>
     <nav>
 
         <ul style="list-style: none;display:flex;justify-content: space-between;padding-right: 10%;padding-left: 10%;">
-            <li><button onclick="birdselect(0)" id="0"
-                    style="background-color: var(--secondary-color); color: var(--font-color);">Pardalote</button></li>
-            <li><button onclick="birdselect(1)" id="1"
-                    style="background-color: var(--secondary-color); color: var(--font-color);">Purple Swamp Hen
+            <li><button onclick="pageselect(0)" id="0"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">Home</button></li>
+            <li><button onclick="pageselect(1)" id="1"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">About
                 </button></li>
-            <li><button onclick="birdselect(2)" id="2"
-                    style="background-color: var(--secondary-color); color: var(--font-color);">White-headed
-                    Stilt</button></li>
-            <li><button onclick="birdselect(3)" id="3"
-                    style="background-color: var(--secondary-color); color: var(--font-color);">Inland
-                    Thornbill</button></li>
-            <li><button onclick="birdselect(4)" id="4"
-                    style="background-color: var(--secondary-color); color: var(--font-color);">Rose Robin</button></li>
+            <li><button onclick="pageselect(2)" id="2"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">Products/Services
+                </button></li>
+            <li><button onclick="pageselect(3)" id="3"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">Order/Contact
+                </button></li>
+            <li><button onclick="pageselect(4)" id="4"
+                    style="background-color: var(--secondary-color); color: var(--font-color);">Blog and News</button>
+            </li>
         </ul>
 
 
     </nav>
+    window.location.href = "http://www.w3schools.com";
     <img id="birdmain" src="http://www.outgrabe.net/bird00.jpg" alt="image not found">
     <p id="birdtext" style="color: var(--font-color);">Pardalote by fir0002 (CC-by-NC)</p>
 </body>
@@ -113,5 +110,7 @@
 <button onclick="nightmode()"
     style="background-color: var(--secondary-color); color: var(--font-color);">nightmode</button>
 
+<footer style="color: var(--font-color);">find out more at turner's.treats instagram page or contact me at a@a.com
+</footer>
 
 </html>
